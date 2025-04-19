@@ -9,7 +9,7 @@ html, body{
     background-color:black;
     font-family: General Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
     overflow: auto;
-    scrollbar-width: none;
+    /* scrollbar-width: none; */
 }
 a{
     text-decoration: none;
@@ -105,4 +105,76 @@ a{
 }
 #work-section{
     width: 100%;
+    padding-top: 10rem;
+    padding-right: 10vw;
+    color: white;
+
+    .work{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 97%;
+        border-top: 1px solid #505050;
+        padding: 3.5vw 0;
+        margin-left: 2.7vw;
+
+
+        h1{
+            text-transform: uppercase;
+            font-size: 6.5vw;
+             color: #A3A3A3;
+        }
+
+        img{
+            display: none;
+            position: absolute;
+            z-index: 999;
+            height: 130%;
+        }
+    }
+    .last-work{
+        border-bottom: 1px solid #505050;
+    }
 }
+#thumbnails{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    
+
+    img{
+        height: 40%;
+        margin-right: 12vw;
+    }
+    #scroll1{
+        display: flex;
+        align-items: center;
+        height: 25vh;
+        border-top: 1px solid #505050;
+        border-bottom: 1px solid #505050;
+        animation: marquee 35s linear infinite;
+        -webkit-animation: marquee 35s linear infinite;
+}
+    /* #scroll2{
+        display: flex;
+        align-items: center;
+        height: 25vh;
+        border-top: 1px solid #505050;
+        border-bottom: 1px solid #505050;
+        animation: marquee2 35s linear infinite;
+        -webkit-animation: marquee2 35s linear infinite;
+} */
+
+
+}
+
+@keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+ /* @keyframes marquee2 {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0); }
+    } */
