@@ -202,3 +202,38 @@ a {
     }
   }
 }
+#subscribe {
+  text-transform: uppercase;
+  color: white;
+  margin: 50px 0 100px 0;
+  margin-left: 40px;
+
+  p {
+    color: #a3a3a3;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  a {
+    font-size: 16px;
+  }
+}
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-weight: 500;
+
+  #footer-left {
+    width: 16rem;
+    padding: 40px 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #footer-right {
+    display: flex;
+    gap: 50px;
+    padding: 40px 40px;
+  }
+}
