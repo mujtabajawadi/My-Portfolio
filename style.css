@@ -10,12 +10,28 @@ body {
   background-color: black;
   font-family: General Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, sans-serif;
-  overflow: auto;
-  scrollbar-width: none;
+    cursor:default;
 }
 a {
   text-decoration: none;
   color: white;
+}
+#mini-circle{
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+  position: absolute;
+  z-index: 999999;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+  -moz-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+  -ms-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+  -o-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
 }
 #main {
   width: 100%;
@@ -33,21 +49,25 @@ a {
   width: 100%;
   padding: 2.1rem 2.1rem;
   color: white;
-}
-#nav a {
+
+  a {
   color: white;
 }
+}
+
 #heading {
   color: white;
   margin-top: 40px;
   text-transform: uppercase;
-}
-#heading h1 {
+
+  h1 {
   font-size: 9vw;
   margin-left: 40px;
   line-height: 1;
   color: #a3a3a3;
 }
+}
+
 #heading #heading-text2 {
   margin-left: 180px;
 }
@@ -140,8 +160,9 @@ a {
 #thumbnails {
   display: flex;
   align-items: center;
-  width: 100%;
+  max-width: 100vw;
   height: 100vh;
+  overflow: hidden;
 
   img {
     height: 40%;
@@ -157,7 +178,6 @@ a {
     -webkit-animation: marquee 35s linear infinite;
   }
 }
-
 @keyframes marquee {
   0% {
     transform: translateX(0);
