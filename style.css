@@ -5,18 +5,19 @@
 }
 html,
 body {
+
   width: 100%;
   height: 100%;
   background-color: black;
   font-family: General Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, sans-serif;
-    cursor:default;
+  cursor: default;
 }
 a {
   text-decoration: none;
   color: white;
 }
-#mini-circle{
+#mini-circle {
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
   position: absolute;
   z-index: 999999;
@@ -34,6 +35,8 @@ a {
   -o-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
 }
 #main {
+    scroll-behavior: smooth;
+    scroll-timeline: --page-scroll block;
   width: 100%;
 }
 #hero {
@@ -51,8 +54,8 @@ a {
   color: white;
 
   a {
-  color: white;
-}
+    color: white;
+  }
 }
 
 #heading {
@@ -61,18 +64,20 @@ a {
   text-transform: uppercase;
 
   h1 {
-  font-size: 9vw;
-  margin-left: 40px;
-  line-height: 1;
-  color: #a3a3a3;
-}
+    font-size: 9vw;
+    margin-left: 40px;
+    line-height: 1;
+    color: #a3a3a3;
+  }
 }
 
-#heading #heading-text2 {
-  margin-left: 180px;
-}
+
 .blocktext {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
   width: fit-content;
+  margin-left: 120px;
 
   h5 {
     text-align: right;
@@ -256,4 +261,49 @@ a {
     gap: 50px;
     padding: 40px 40px;
   }
+}
+
+.text-animation {
+  width: fit-content;
+  overflow: hidden;
+
+
+  .text-to-animate {
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+}
+  #pakistan{
+    transform: translateY(-200%);
+    -webkit-transform: translateY(-200%);
+    -moz-transform: translateY(-200%);
+    -ms-transform: translateY(-200%);
+    -o-transform: translateY(-200%);
+}
+
+  
+}
+
+#availability-text{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  .availability-text1{
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+}
+  .availability-text2{
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+}
+
+
 }
