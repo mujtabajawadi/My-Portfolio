@@ -21,8 +21,8 @@ a {
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
   position: absolute;
   z-index: 999999;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-color: #fff;
   border-radius: 50%;
   -webkit-border-radius: 50%;
