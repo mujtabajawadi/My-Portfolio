@@ -152,11 +152,13 @@ a {
     }
 
     img {
-      display: none;
       position: absolute;
+      display: none;
       z-index: 999;
-      height: 130%;
-    }
+      height: 140%;
+      /* transform: translate(-50%, -50%); */
+      border-radius: 5px;
+}
   }
   .last-work {
     border-bottom: 1px solid #505050;
