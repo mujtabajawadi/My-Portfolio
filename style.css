@@ -25,19 +25,9 @@ a {
   height: 12px;
   background-color: #fff;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
-  -moz-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
-  -ms-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
-  -o-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
 }
 #main {
-    scroll-behavior: smooth;
-    scroll-timeline: --page-scroll block;
-  width: 100%;
+ width: 100%;
 }
 #hero {
   width: 100%;
@@ -140,7 +130,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 97%;
+    width: 100%;
     border-top: 1px solid #505050;
     padding: 3.5vw 0;
     margin-left: 2.7vw;
@@ -153,10 +143,9 @@ a {
 
     img {
       position: absolute;
-      display: none;
-      z-index: 999;
-      height: 140%;
-      /* transform: translate(-50%, -50%); */
+      opacity: 0;
+      z-index: 9;
+      height: 130%;
       border-radius: 5px;
 }
   }

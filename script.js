@@ -29,8 +29,7 @@ const mouseCircleDistort = () => {
   var previousX = 0;
   var previousY = 0;
   window.addEventListener("mousemove", (details) => {
-
-    clearTimeout(timeout)
+    clearTimeout(timeout);
     xScale = gsap.utils.clamp(0.8, 1.2, details.clientX - previousX);
     yScale = gsap.utils.clamp(0.8, 1.2, details.clientY - previousY);
 
@@ -43,11 +42,11 @@ const mouseCircleDistort = () => {
       document.querySelector("#mini-circle").style.transform = `translate(${
         details.clientX - 6
       }px, ${details.clientY - 5}px) scale(1, 1)`;
-    },100)
+    }, 100);
   });
 };
 
-mouseCircleDistort()
+mouseCircleDistort();
 
 const mouseFollowerCircle = (xScale, yScale) => {
   window.addEventListener("mousemove", function (details) {
@@ -60,61 +59,63 @@ const mouseFollowerCircle = (xScale, yScale) => {
 mouseFollowerCircle();
 firstPageAnimation();
 
-
-document.querySelectorAll('.work').forEach((element) => {
-   var rotate = 0;
+document.querySelectorAll(".work").forEach((element) => {
+  var rotate = 0;
   var positionDifference = 0;
-  var isVisible = false
-
-  var image = element.querySelector("img");
-  image.style.display = 'none'
-  
+  var image = element.querySelector('img')
  
-  element.addEventListener('mousemove', (details) => {
+  const imageWidth = image.offsetWidth
+  const imageHeight = image.offsetHeight
 
-    var diff = details.clientY - element.getBoundingClientRect().top//mouse position inside div element
-    console.log(diff)
-    positionDifference = details.clientX - rotate
-    rotate = details.clientX
 
+
+
+  element.addEventListener('mouseenter', () => {
+    mouseInsideDiv = true
 
    
-
-    const imageWidth = image.offsetWidth;
-    const imageHeight = image.offsetHeight;
-
-    
-    if (!isVisible) {
-      gsap.to(image, {
-        display: 'block',
-        opacity: 1,
-        ease: Power3,
-        top: diff - (imageHeight / 2),
-        left: details.clientX - (imageWidth / 2),
-        rotate: gsap.utils.clamp(-15, 15, positionDifference),
-      });
-      isVisible = true
-    }
-
-      gsap.to(image, {
-    top: diff - (imageHeight/2),
-    left: details.clientX - (imageWidth/2),
-    rotate: gsap.utils.clamp(-15, 15, positionDifference),
-    ease: Power3,
-    duration: 0.2
-  });
-});
   })
-  
-    element.addEventListener("mouseleave", (details) => {
-      var image = element.querySelector("img");
-        gsap.to(image, {
-          opacity: 0,
-          onComplete: () => {
-            image.style.display = "none";
-            isVisible = false;
-          },
-        });
-      
-    });
 
+   element.addEventListener("mousemove", (details) => {
+    
+       var diff = details.clientY - element.getBoundingClientRect().top; //mouse position inside div element
+       positionDifference = details.clientX - rotate;
+       rotate = details.clientX;
+
+       gsap.to(image, {
+         opacity: 2,
+         ease: Power1,
+         top: diff - imageHeight / 2,
+         left: details.clientX - imageWidth / 2,
+         rotate: gsap.utils.clamp(-15, 15, positionDifference),
+       });
+     
+   });
+
+
+
+  
+
+  element.addEventListener("mouseleave", () => {
+      
+    
+      gsap.to(image, {
+        opacity: 0,
+        zIndex: -1
+      });
+
+
+    element.removeEventListener('mousemove')
+    });
+});
+
+
+const footer = document.querySelectorAll('.footer-link')
+footer.forEach((elem) => {
+  elem.addEventListener('mouseover', () => {
+    elem.style.textDecoration = 'underline'
+  })
+  elem.addEventListener('mouseleave', () => {
+    elem.style.textDecoration = 'none'
+  })
+})
