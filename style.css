@@ -5,17 +5,21 @@
 }
 html,
 body {
-
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100lvh;
   background-color: black;
   font-family: General Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, sans-serif;
   cursor: default;
+  scrollbar-width: none;
 }
 a {
   text-decoration: none;
   color: white;
+}
+li{
+    list-style: none;
+
 }
 #mini-circle {
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
@@ -27,10 +31,10 @@ a {
   border-radius: 50%;
 }
 #main {
- width: 100%;
+  width: 100vw;
 }
 #hero {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: black;
   color: white;
@@ -39,9 +43,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 2.1rem 2.1rem;
+  width: 100vw;
+  padding: 2.1rem;
   color: white;
+  position: fixed;
+  top: 0;
 
   a {
     color: white;
@@ -50,8 +56,9 @@ a {
 
 #heading {
   color: white;
-  margin-top: 40px;
+  margin-top: 7.5rem;
   text-transform: uppercase;
+  letter-spacing: 0.rem;
 
   h1 {
     font-size: 9vw;
@@ -61,13 +68,13 @@ a {
   }
 }
 
-
 .blocktext {
   display: flex;
   flex-direction: column;
   align-items: end;
   width: fit-content;
   margin-left: 120px;
+  letter-spacing: 0.rem;
 
   h5 {
     text-align: right;
@@ -120,8 +127,8 @@ a {
   }
 }
 #work-section {
-  width: 100%;
-  padding-top: 10rem;
+  width: 100vw;
+  /* padding-top: 10rem; */
   padding-right: 10vw;
   color: white;
 
@@ -135,11 +142,22 @@ a {
     padding: 3.5vw 0;
     margin-left: 2.7vw;
 
+   
+
     h1 {
       text-transform: uppercase;
-      font-size: 6.5vw;
+      font-size: 5rem;
       color: #a3a3a3;
+      transition: transform 0.8s ease-in-out;
+       
     }
+
+     &:hover{
+        h1{
+          opacity: 0.3;
+          transform: translateX(3rem)
+        }
+       }
 
     img {
       position: absolute;
@@ -147,31 +165,49 @@ a {
       z-index: 9;
       height: 130%;
       border-radius: 5px;
-}
+    }
   }
   .last-work {
     border-bottom: 1px solid #505050;
   }
 }
+.projects-btn{
+  margin-left: 2.7vw;
+  cursor: pointer;
+  color: white;
+  background: transparent;
+     border: 1.5px solid white;
+      padding: 7px 20px;
+      font-size: 16px;
+      border-radius: 100px;
+      transition: all 0.3s ease-in;
+
+      &:hover{
+        color: black;
+        background: white;
+      }
+}
 #thumbnails {
   display: flex;
   align-items: center;
+  margin-top: 1rem;
   max-width: 100vw;
   height: 100vh;
   overflow: hidden;
 
   img {
     height: 40%;
-    margin-right: 12vw;
+    margin-right: 50%;
   }
   #scroll1 {
     display: flex;
     align-items: center;
     height: 25vh;
+    width: 100vw;
     border-top: 1px solid #a3a3a3;
     border-bottom: 1px solid #a3a3a3;
-    animation: marquee 35s linear infinite;
-    -webkit-animation: marquee 35s linear infinite;
+    animation: marquee 7s linear infinite;
+    -webkit-animation: marquee 5s linear infinite;
   }
 }
 @keyframes marquee {
@@ -183,11 +219,14 @@ a {
   }
 }
 #content-about {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   padding: 2vw 3vw;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  align-content: center;
   gap: 80px;
   color: white;
 
@@ -207,7 +246,7 @@ a {
     }
 
     #about-button {
-      border: 1px solid white;
+      border: 1.5px solid white;
       padding: 7px 20px;
       font-size: 16px;
       border-radius: 100px;
@@ -215,6 +254,13 @@ a {
       -moz-border-radius: 100px;
       -ms-border-radius: 100px;
       -o-border-radius: 100px;
+
+       transition: all 0.3s ease-in;
+
+      &:hover{
+        color: black;
+        background: white;
+      }
     }
   }
 }
@@ -232,9 +278,17 @@ a {
   a {
     font-size: 16px;
   }
+ h4:hover{
+        text-decoration: underline;
+
+  }
 }
+
+
 #footer {
   display: flex;
+  flex-wrap: wrap-reverse;
+  width: 100vw;
   align-items: center;
   justify-content: space-between;
   color: white;
@@ -248,9 +302,37 @@ a {
   }
 
   #footer-right {
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
     gap: 50px;
     padding: 40px 40px;
+
+      a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      padding: 1px 0;
+    }
+
+      .footer-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease-in-out;
+    }
+     .footer-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
   }
 }
 
@@ -258,43 +340,38 @@ a {
   width: fit-content;
   overflow: hidden;
 
-
   .text-to-animate {
     transform: translateY(100%);
     -webkit-transform: translateY(100%);
     -moz-transform: translateY(100%);
     -ms-transform: translateY(100%);
     -o-transform: translateY(100%);
-}
-  #pakistan{
+  }
+  #pakistan {
     transform: translateY(-200%);
     -webkit-transform: translateY(-200%);
     -moz-transform: translateY(-200%);
     -ms-transform: translateY(-200%);
     -o-transform: translateY(-200%);
+  }
 }
 
-  
-}
-
-#availability-text{
+#availability-text {
   display: flex;
   flex-direction: column;
   align-items: end;
-  .availability-text1{
+  .availability-text1 {
     transform: translateY(-100%);
     -webkit-transform: translateY(-100%);
     -moz-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
     -o-transform: translateY(-100%);
-}
-  .availability-text2{
+  }
+  .availability-text2 {
     transform: translateY(-100%);
     -webkit-transform: translateY(-100%);
     -moz-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
     -o-transform: translateY(-100%);
-}
-
-
+  }
 }
