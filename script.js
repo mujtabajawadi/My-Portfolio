@@ -1,10 +1,20 @@
-const scroll = new LocomotiveScroll({
-  el: document.querySelector("#main"),
-  smooth: true,
-});
-
+const footerTime = document.getElementById("time");
+const footerYear = document.getElementById("year")
 var timeout;
 
+
+
+const lenis = new Lenis({
+  duration: 1.8
+});
+
+// Use requestAnimationFrame to continuously update the scroll
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
 const firstPageAnimation = () => {
   var tl = gsap.timeline();
 
@@ -12,7 +22,6 @@ const firstPageAnimation = () => {
     y: "-20",
     opacity: 0,
     duration: 1.5,
-    // delay: '-0.5',
     ease: "slow",
   }).to(".text-to-animate", {
     y: 0,
@@ -46,8 +55,6 @@ const mouseCircleDistort = () => {
   });
 };
 
-mouseCircleDistort();
-
 const mouseFollowerCircle = (xScale, yScale) => {
   window.addEventListener("mousemove", function (details) {
     document.querySelector("#mini-circle").style.transform = `translate(${
@@ -56,66 +63,63 @@ const mouseFollowerCircle = (xScale, yScale) => {
   });
 };
 
+const currentTime = () => {
+  const time = new Date();
+  console.log(time.toLocaleTimeString())
+
+  let fullTime = time.toLocaleTimeString()
+
+  footerTime.innerText = `${fullTime}  PST`
+  footerYear.innerText = time.getFullYear() 
+
+  // let hours = time.getHours();
+  // let minutes = time.getMinutes();
+  // if (hours > 12) {
+  //   footerTime.innerText = `${hours - 12}: ${minutes} PM PST`;
+  // } else if (hours == "00") {
+  //   footerTime.innerText = `12 : ${minutes} AM PST`;
+  // } else {
+  //   footerTime.innerText = `${hours} : ${minutes} AM PST`;
+  // }
+};
+
+setInterval(() => {
+  currentTime();
+}, 1000);
+
 mouseFollowerCircle();
 firstPageAnimation();
+mouseCircleDistort();
 
 document.querySelectorAll(".work").forEach((element) => {
   var rotate = 0;
   var positionDifference = 0;
-  var image = element.querySelector('img')
- 
-  const imageWidth = image.offsetWidth
-  const imageHeight = image.offsetHeight
+  var image = element.querySelector("img");
 
+  const imageWidth = image.offsetWidth;
+  const imageHeight = image.offsetHeight;
 
+  element.addEventListener("mousemove", (details) => {
+    var diff = details.clientY - element.getBoundingClientRect().top; //mouse position inside div element
+    positionDifference = details.clientX - rotate;
+    rotate = details.clientX;
 
-
-  element.addEventListener('mouseenter', () => {
-    mouseInsideDiv = true
-
-   
-  })
-
-   element.addEventListener("mousemove", (details) => {
-    
-       var diff = details.clientY - element.getBoundingClientRect().top; //mouse position inside div element
-       positionDifference = details.clientX - rotate;
-       rotate = details.clientX;
-
-       gsap.to(image, {
-         opacity: 2,
-         ease: Power1,
-         top: diff - imageHeight / 2,
-         left: details.clientX - imageWidth / 2,
-         rotate: gsap.utils.clamp(-15, 15, positionDifference),
-       });
-     
-   });
-
-
-
-  
+    gsap.to(image, {
+      opacity: 1,
+      zIndex: 9999,
+      ease: Power3,
+      top: diff - imageHeight / 2,
+      left: details.clientX - imageWidth / 2,
+      rotate: gsap.utils.clamp(-15, 15, positionDifference * 0.5),
+    });
+  });
 
   element.addEventListener("mouseleave", () => {
-      
-    
-      gsap.to(image, {
-        opacity: 0,
-        zIndex: -1
-      });
-
-
-    element.removeEventListener('mousemove')
+    gsap.to(image, {
+      opacity: 0,
+      zIndex: -1,
     });
+  });
 });
 
 
-const footer = document.querySelectorAll('.footer-link')
-footer.forEach((elem) => {
-  elem.addEventListener('mouseover', () => {
-    elem.style.textDecoration = 'underline'
-  })
-  elem.addEventListener('mouseleave', () => {
-    elem.style.textDecoration = 'none'
-  })
-})
