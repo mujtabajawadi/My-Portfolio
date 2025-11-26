@@ -2,22 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/images/icon-mujtaba.jpg" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="locomotive.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>mujtaba-jawadi</title>
+    <title>Mujtaba Jawadi &bull; JavaScript Developer</title>
   </head>
   <body>
-    <div id="mini-circle"></div>
     <div id="main" class="overflow-X-hidden">
       <div id="hero">
         <nav id="nav">
           <a href="#"><h4>Mujtaba Jawadi</h4></a>
-          <h4>MENU+</h4>
+          <a href="mailto:mujtabajawadi986@gmail.com" id="hireButton"
+            >Let's talk</a
+          >
         </nav>
         <div id="heading">
           <div class="text-animation">
@@ -28,7 +29,7 @@
               <h1 class="text-to-animate">Developer</h1>
             </div>
             <div class="text-animation">
-              <h5 class="text-to-animate" id="pakistan">(MERN stack)</h5>
+              <h5 class="text-to-animate" id="pakistan">(MERN)</h5>
             </div>
           </div>
         </div>
@@ -48,24 +49,29 @@
 
       <div id="thumbnails">
         <div id="scroll1">
-          <img src="./thumbnails/html5.svg" alt="" />
-          <img src="./thumbnails/CSS.svg" alt="" />
-          <img src="./thumbnails/tailwind.svg" alt="" />
-          <img src="./thumbnails/javascript.svg" alt="" />
-          <img src="./thumbnails/nodejs.svg" alt="" />
-          <img src="./thumbnails/mongoDB.svg" alt="" />
-          <img src="./thumbnails/Git.svg" alt="" />
-          <img src="./thumbnails/expresspng.png" alt="" />
-          <img src="./thumbnails/html5.svg" alt="" />
-          <img src="./thumbnails/CSS.svg" alt="" />
-          <img src="./thumbnails/tailwind.svg" alt="" />
-          <img src="./thumbnails/javascript.svg" alt="" />
-          <img src="./thumbnails/nodejs.svg" alt="" />
-          <img src="./thumbnails/mongoDB.svg" alt="" />
-          <img src="./thumbnails/Git.svg" alt="" />
-          <img src="./thumbnails/expresspng.png" alt="" />
+          <div class="scroll-content">
+            <img src="./thumbnails/html5.svg" alt="" />
+            <img src="./thumbnails/CSS.svg" alt="" />
+            <img src="./thumbnails/tailwind.svg" alt="" />
+            <img src="./thumbnails/javascript.svg" alt="" />
+            <img src="./thumbnails/nodejs.svg" alt="" />
+            <img src="./thumbnails/mongoDB.svg" alt="" />
+            <img src="./thumbnails/Git.svg" alt="" />
+            <img src="./thumbnails/expresspng.png" alt="" />
+          </div>
+          <div class="scroll-content">
+            <img src="./thumbnails/html5.svg" alt="" />
+            <img src="./thumbnails/CSS.svg" alt="" />
+            <img src="./thumbnails/tailwind.svg" alt="" />
+            <img src="./thumbnails/javascript.svg" alt="" />
+            <img src="./thumbnails/nodejs.svg" alt="" />
+            <img src="./thumbnails/mongoDB.svg" alt="" />
+            <img src="./thumbnails/Git.svg" alt="" />
+            <img src="./thumbnails/expresspng.png" alt="" />
+          </div>
         </div>
       </div>
+
       <div id="work-section">
         <div class="work">
           <img src="./images/lucid-motors.webp" alt="" />
@@ -81,13 +87,13 @@
         </div>
       </div>
 
-      <a href="/projects.html">
+      <a href="/projects.html" class="btn-projects">
         <button class="projects-btn">View all projects</button>
       </a>
 
       <div id="about">
         <div id="content-about">
-          <img src="./images/cynthia.webp" alt="" />
+          <img src="./images/mujtaba.jpg" alt="" />
           <div id="about-text">
             <p style="color: #a3a3a3">(ABOUT ME)</p>
             <p>
@@ -101,31 +107,41 @@
             >
           </div>
         </div>
+        <div id="subscribe">
+          <p>oops, almost fogot...</p>
+          <a
+            href="https://github.com/mujtabajawadi"
+            style="display: flex; align-items: center; gap: 5px"
+          >
+            <h4>visit my github profile</h4>
+            <i class="ri-external-link-fill"></i>
+          </a>
+        </div>
       </div>
-      <div id="subscribe">
-        <p>oops, almost fogot...</p>
-        <a href="https://github.com/mujtabajawadi">
-          <h4>visit my github profile</h4>
-          <i class="arrow"></i>
-        </a>
-      </div>
+
       <div id="footer">
         <div id="footer-left">
           <p id="year"></p>
           <p id="time"></p>
         </div>
+        <hr class="footer-row" />
 
         <ul id="footer-right">
           <li><a href="" class="footer-link">LINKEDIN</a></li>
           <li><a href="" class="footer-link">X/TWITTER</a></li>
           <li><a href="" class="footer-link">INSTAGRAM</a></li>
-          <li><a href="" class="footer-link">YOUTUBE</a></li>
         </ul>
       </div>
     </div>
 
-    <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="script.js"></script>
+    <script
+      src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
