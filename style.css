@@ -35,7 +35,7 @@ button {
 }
 #hero {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background-color: black;
   color: white;
 }
@@ -44,10 +44,14 @@ button {
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  padding: 2.1rem;
+  padding-inline: 2rem;
+  padding-block: 1rem;
   color: white;
+  background: rgba(0,0,0,0.8);
   position: fixed;
   top: 0;
+  left: 0;
+  z-index: 10000;
 
   a {
     color: white;
@@ -63,11 +67,6 @@ button {
     border-radius: 100px;
     transition: all 0.3s ease-in;
     z-index: 99999;
-
-    &:hover {
-      color: black;
-      background: white;
-    }
   }
 }
 
@@ -152,14 +151,7 @@ button {
     }
   }
 }
-@media (hover: hover) {
-  #work-section .work:hover {
-    h1 {
-      opacity: 0.3;
-      transform: translateX(3rem);
-    }
-  }
-}
+
 .projects-btn {
   margin-left: 2.7vw;
   cursor: pointer;
@@ -170,11 +162,6 @@ button {
   font-size: 16px;
   border-radius: 100px;
   transition: all 0.3s ease-in;
-
-  &:hover {
-    color: black;
-    background: white;
-  }
 }
 #thumbnails {
   width: 100vw;
@@ -191,8 +178,7 @@ button {
   align-items: center;
   width: fit-content;
   height: 30%;
-  border-top: 1px solid #a3a3a3;
-  border-bottom: 1px solid #a3a3a3;
+  border-block:  1px solid #a4a4a4a4;
   animation: marquee 15s linear infinite;
 }
 
@@ -255,11 +241,6 @@ button {
       -o-border-radius: 100px;
 
       transition: all 0.3s ease-in;
-
-      &:hover {
-        color: black;
-        background: white;
-      }
     }
   }
 }
@@ -331,11 +312,35 @@ button {
       transform-origin: left;
       transition: transform 0.3s ease-in-out;
     }
-    .footer-link:hover::after {
+    
+  }
+}
+
+@media (hover: hover){
+
+  #nav #hireButton:hover{
+      color: black;
+      background: white;
+  }
+   #work-section .work:hover {
+    h1 {
+      opacity: 0.3;
+      transform: translateX(3rem);
+    }
+  }
+
+  #footer #footer-right .footer-link:hover::after {
       transform: scaleX(1);
       transform-origin: left;
     }
-  }
+    #content-about #about-text #about-button:hover{
+       color: black;
+        background: white;
+    }
+    .projects-btn:hover{
+      color: black;
+      background: white;
+    }
 }
 
 .text-animation {
@@ -402,9 +407,16 @@ button {
     }
   }
 
-  #thumbnails {
+  #thumbnails{
     height: 40vh;
+
+    img{
+      height: 3rem;
+    }
   }
+ #scroll1 img{
+  margin-right: 7rem;
+ }
 
   #work-section .work {
     padding-block: 2rem;
@@ -457,17 +469,18 @@ button {
       display: flex;
       width: 100%;
       opacity: 0.5;
-      margin-inline: 2rem;
+      margin-inline: 1rem;
       font-family: "GeneralSans-Regular";
     }
     #footer-left {
       width: 100%;
+      padding-inline: 1rem;
     }
 
     #footer-right {
       margin: 0;
-      /* padding: 1rem; */
-      justify-content: space-evenly;
+      padding-inline: 1rem;
+      justify-content: space-around;
       display: flex;
       width: 100%;
     }

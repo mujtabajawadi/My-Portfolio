@@ -1,3 +1,4 @@
+const navbar = document.getElementById("#nav")
 const footerTime = document.getElementById("time");
 const footerYear = document.getElementById("year")
 var timeout;
@@ -29,11 +30,28 @@ const firstPageAnimation = () => {
     ease: "slow",
     stagger: 0.3,
     delay: "-1",
-  }).from("#thumbnails",  {
-    y: "5",
-    opacity: 0,
+  }).to("#thumbnails",  {
+    y: "0",
+    opacity: 1,
+    duration: 4
   })
 };
+
+const showAnim = gsap
+  .from("#nav", {
+    yPercent: -100,
+    paused: true,
+    duration: 0.5,
+  })
+  .progress(1);
+
+ScrollTrigger.create({
+  start: "top top",
+  end: "max",
+  onUpdate: (self) => {
+    self.direction === -1 ? showAnim.play() : showAnim.reverse();
+  },
+});
 
 
 
