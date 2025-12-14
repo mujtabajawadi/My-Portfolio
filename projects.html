@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>projects</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="/images/icon-mujtaba.jpg"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <title>Projects &bull; Mujtaba Jawadi</title>
+    <meta
+      name="description"
+      content="JavaScript Developer having experties in MERN stack based in Pakistan. Building and deploying responsive full-stack web applications using React, Node, Express and MongoDB."
+    />
+    <meta name="og:title" content="Projects &bull; Mujtaba Jawadi" />
+    <meta
+      name="og:description"
+      content="JavaScript Developer having experties in MERN stack based in Pakistan. Building and deploying responsive full-stack web applications using React, Node, Express and MongoDB."
+    />
+    <meta
+      name="og:image"
+      content="https://mujtabajawadi.vercel.app/images/icon-mujtaba.jpg"
+    />
+  </head>
+  <body style="color: white">
+    <div id="main">
+      <div id="projects-hero">
+        <nav id="nav">
+          <a href="/index.html"
+            ><h1 style="font-size: 1rem">Mujtaba Jawadi</h1></a
+          >
+          <a href="mailto:mujtabajawadi986@gmail.com" id="hireButton"
+            >Let's talk</a
+          >
+        </nav>
+      </div>
+      <div class="projects-section">
+        <header class="projects-heading">
+          <h1>
+            WORK<sup
+              id="projects-count"
+              style="font-size: 5.7vw; color: rgb(97, 97, 97)"
+            ></sup>
+          </h1>
+        </header>
+        <main>
+          <div class="grid-view" style="color: white"></div>
+        </main>
+
+        <template id="projects-template">
+          <div class="project-card">
+            <div>
+              <img src="" alt="" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h1 id="project-title"></h1>
+              <h5>
+                <span><i class="ri-link-m"></i></span>
+                <a
+                  id="project-url"
+                  href=""
+                  target="_blank"
+                ></a>
+              </h5>
+              <p id="project-description"></p>
+              <div id="technologies"></div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <div id="footer">
+        <div id="footer-left">
+          <p id="year"></p>
+          <p id="time"></p>
+        </div>
+        <hr class="footer-row" />
+
+        <ul id="footer-right">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/m-mujtaba-jawadi/"
+              target="_blank"
+              class="footer-link"
+              >LINKEDIN</a
+            >
+          </li>
+          <li><a href="https://x.com/MMujtabaJawadi1?t=ExCTON-5tUtoeS_SdUFUdQ&s=09" target="_blank" class="footer-link">X/TWITTER</a></li>
+          <li><a href="https://www.instagram.com/m_mujtabajawadi?igsh=MTlib3EwcjhiajYweQ==" target="_blank" class="footer-link">INSTAGRAM</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="showProjects.js"></script>
+  </body>
 </html>
