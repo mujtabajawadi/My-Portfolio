@@ -1,6 +1,7 @@
-const navbar = document.getElementById("#nav")
+const navbar = document.getElementById("nav")
 const footerTime = document.getElementById("time");
 const footerYear = document.getElementById("year")
+
 var timeout;
 
 
@@ -33,7 +34,7 @@ const firstPageAnimation = () => {
   }).to("#thumbnails",  {
     y: "0",
     opacity: 1,
-    duration: 4
+    duration: 2
   })
 };
 
@@ -108,5 +109,3 @@ document.querySelectorAll(".work").forEach((element) => {
     });
   });
 });
-
-
